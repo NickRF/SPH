@@ -3,3 +3,5 @@
 *.bin
 *.csv
 *.DS_Store
+/.vscode
+/build

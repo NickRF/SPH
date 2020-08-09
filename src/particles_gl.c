@@ -29,12 +29,6 @@ THE SOFTWARE.
 #include "particles_gl.h"
 #include "ogl_utils.h"
 
-#ifdef GLFW
-  #include "glfw_utils.h"
-#else
-  #include "egl_utils.h"
-#endif
-
 void init_particles(particles_t *state, int screen_width, int screen_height)
 {
     state->screen_width = screen_width;

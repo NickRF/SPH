@@ -31,28 +31,24 @@ On the RaspberryPi the following packages must be installed, all of which are av
 
     $ sudo apt-get install mpich
     $ sudo apt-get install libglew-dev
+    $ sudo apt-get install libgles-dev
+    $ sudo apt-get install libfreetype6-dev
+
+### Generic (Debian-based) Linux
+
+    $ sudo apt install mpich libfreetype6-dev libglfw3-dev
 
 ## Compile and run
-Once the prerequisites have been installed TitanSPH can be compiled and run.
+Once the prerequisites have been installed TinySPH can be compiled and run.
 
-### Macintosh
+To Compile
 
-To compile
-
-    $ make -f makefile_macos
+    $ mkdir build; cd build
+    $ cmake ..; make
 
 To run on a 4 core single socket computer:
 
-    $ mpirun -n 4 ./bin/sph.out
-
-### Raspbery Pi
-To Compile
-
-    $ make
-
-To run on TinyTitan
-
-    $ make run
+    $ mpirun -n 4 ./build/sph
 
 ## Controls
 The input controls are set in `GLFW_utils.c` and `EGL_utils.c` for GLFW and Raspberry Pi platforms respectively. The Pi's controls are based upon using an XBox controller to handle input.
